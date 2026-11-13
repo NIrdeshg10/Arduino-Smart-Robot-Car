@@ -22,7 +22,7 @@ follow a black line automatically.
 
 ## Class Diagram
 
-```mermaid
+**```**mermaid
 classDiagram
     class RobotCar {
         -Motor leftMotor
@@ -39,6 +39,7 @@ classDiagram
         -int speed
         -bool running
         -int motorPin
+        +isRunning() bool
         +setSpeed(int) void
         +start() void
         +stop() void
@@ -49,6 +50,8 @@ classDiagram
         -int rightValue
         +readSensors() void
         +detectLine() bool
+        +getLeftValue() int
+        +getRightValue() int
     }
 
     class PathFollower {
@@ -60,6 +63,7 @@ classDiagram
     class CarController {
         -RobotCar car
         -PathFollower pathFollower
+        -bool active
         +startCar() void
         +update() void
         +stopCar() void
@@ -69,4 +73,4 @@ classDiagram
     PathFollower "1" *-- "1" Sensor
     CarController "1" *-- "1" RobotCar
     CarController "1" *-- "1" PathFollower
-```
+**```**
